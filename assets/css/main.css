@@ -1,0 +1,21 @@
+.h1teams{
+    color: blue;
+    text-align: center;
+    font-size: 5em;
+    font-family:sans-serif;
+}
+.mSize{
+    font-size: 200%;
+}
+.bg {
+    /* The image used */
+    background-image: url("assets/images/Instuif_01.jpg");
+
+    /* Full height */
+    height: 40%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
