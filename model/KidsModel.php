@@ -7,13 +7,12 @@ class KidsModel
 {
 
   private $db;
-  public $currentDate;
   public $afbeeldingName;
 
-          function __construct()
+      public function __construct()
     {
         $this->db = $GLOBALS['config']['database'];
-        $this->currentDate = date(l,z,M,Y);
+
      }
 
      public function createKidPhoto($fileArray)
@@ -65,17 +64,17 @@ class KidsModel
        $sql = "INSERT INTO `kids`(`voornaam`, `tussenvoegesel`, `achternaam`, `geboortedatum`, `straat`, `huisnummer`, `toevoeging`, `postcode`, `plaats`, `telefoon_ouder`, `email_ouder`, `afbeelding_naam`)
        VALUES (':voornaam', ':tussenvoegesel', ':achternaam', ':geboortedatum', ':straat', ':huisnummer', ':toevoeging', ':postcode', ':plaats', ':telefoon_ouder', ':email_ouder', ':afbeelding_naam')";
        $sqlValues = [
-          ':voornaam',
-          ':tussenvoegesel',
-          ':achternaam',
-          ':geboortedatum',
-          ':straat',
-          ':huisnummer',
-          ':toevoeging',
-          ':postcode',
-          ':plaats',
-          ':telefoon_ouder',
-          ':email_ouder',
+          ':voornaam' =>$postArray["firstName"],
+          ':tussenvoegesel'=>$postArray["middleName"],
+          ':achternaam'=>$postArray["lastName"],
+          ':geboortedatum'=>$postArray["bday"],
+          ':straat'=>$postArray["street"],
+          ':huisnummer'=>$postArray["houseNumber"],
+          ':toevoeging'=>$postArray["Added"],
+          ':postcode'=>$postArray["zipCode"],
+          ':plaats'=>$postArray["City"],
+          ':telefoon_ouder'=>$postArray["cellPhone"],
+          ':email_ouder'=> $postArray["Email"],
           ':afbeelding_naam' => $this->afbeeldingName
        ];
        $resultData = $this->db->createdata($sql, $sqlValues);

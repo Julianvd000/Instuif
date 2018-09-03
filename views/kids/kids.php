@@ -7,19 +7,23 @@
   <div class="form-group">
     <label>Voornaam</label><br>
       <input id="firstName" type="text" name="firstName" value=""  placeholder="Voornaam" required><br>
+    <label>Tussenvoegesel</label><br>
+      <input id="lastName" type="text" name="middleName" value=""  placeholder="Tussenvoegesel"><br>
     <label>Achternaam</label><br>
       <input id="lastName" type="text" name="lastName" value=""  placeholder="Achternaam" required><br>
   <div class="form-group">
     <label>Geboorte datum</label><br>
-      <input type="date" name="bday" required min=""><br>
+      <input type="date" name="bday" required><br>
     <label>Adres</label><br>
-      <input type="text" name="adress" value="" placeholder="Boerstraat"><br>
+      <input type="text" name="street" value="" placeholder="Boerstraat"><br>
     <label>Huisnummer</label><br>
       <input type="number" name="houseNumber" value="" placeholder="12"><br>
     <label>Toevoeging</label><br>
     <input type="text" name="Added" value="" placeholder="A"><br>
     <label>Postcode</label><br>
       <input type="text" name="zipCode" value="" placeholder="1212AA"><br>
+    <label>Plaats</label><br>
+      <input type="text" name="City" value="" placeholder="Huizen"><br>
   </div>
   <div class="form-group">
     <label>Telefoonnummer ouder/verzorger</label><br>

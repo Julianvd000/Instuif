@@ -1,5 +1,5 @@
 <?php
-include 'dbhandler.php';
+
   $config;
 
   $config['project-name'] = 'Instuif Databank';

@@ -1,5 +1,5 @@
 <?php
-
+  require_once APP_PATH . '/model/KidsModel.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,8 +12,10 @@
  * @author jdijk
  */
 class KidsController {
-    public function __contruct($param) {
+  protected $model;
 
+    public function __construct() {
+      $this->model = new KidsModel();
 
 }
    public function overview(){
@@ -37,12 +39,12 @@ class KidsController {
         loadView("kids/kids");
         loadView("theme/footer");
 
-        var_dump($_POST);
         var_dump($_FILES);
 
-          $resultPhoto = $this->model->createKidPhoto($_FILES);
-          $resultKid = $this->model->createKid($_POST);
-          if ($resultKid === true && $resultPhoto === true){
+        $resultKid = $this->model->createKid($_POST);
+        $resultPhoto = $this->model->createKidPhoto($_FILES);
+
+          if ($resultKid === true && $resultPhoto){
             loadView("kids/kidsCreated");
           }
 
