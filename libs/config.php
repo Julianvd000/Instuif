@@ -1,4 +1,5 @@
 <?php
+include 'dbhandler.php';
   $config;
 
   $config['project-name'] = 'Instuif Databank';
@@ -18,4 +19,3 @@
 
 
   $GLOBALS['config'] = $config;
-
