@@ -48,7 +48,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-            <?php echo " <a class='navbar-brand' href=". APP_PATH ."/> <i class='fas fa-home'></i> ".$GLOBALS['config']['project-name']. "</a>"; ?>
+            <?php echo " <a class='navbar-brand' href='./'> <i class='fas fa-home'></i> ".$GLOBALS['config']['project-name']. "</a>"; ?>
 
             </div>
             <!-- /.navbar-header -->
@@ -75,7 +75,7 @@
                       </ul>
                     <?php else: ?>
                       <ul class="dropdown-menu dropdown-user">
-                          <li><a href="./index.php?controller=Dashboard&action=overview"><i class="fa fa-sign-out fa-fw"></i>Login</a>
+                          <li><a href=""><i class="fa fa-sign-out fa-fw"></i>Login</a>
                           </li>
                       </ul>
                     <?php endif; ?>
@@ -90,9 +90,8 @@
 
 
             <div class="navbar-default sidebar" role="navigation">
-              <?php if (isset($ShowMenu)): ?>
-              <?php if ($ShowMenu === true ): ?>
-                <div class="sidebar-nav navbar-collapse">
+              <div class="sidebar-nav navbar-collapse">
+                <?php if (false): ?>
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
@@ -106,43 +105,9 @@
                             <!-- /input-group -->
                         </li>
 
+
+
                         <li>
-                            <a href="#"><i class="fa fa-users" aria-hidden="true"></i> Teams<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="index.php?controller=teams&action=overview">Overzicht</a>
-                                </li>
-                                <li>
-                                    <a href="index.php?controller=teams&action=create">Aanmaken</a>
-
-                                </li>
-                                <li>
-                                    <a href="index.php?controller=teams&action=update">wijzigen</a>
-                                </li>
-                                <li>
-                                    <a href="index.php?controller=teams&action=delete">archiveren</a>
-                                </li>
-                            </ul>
-                          </li>
-                          <li>
-                              <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Leiding<span class="fa arrow"></span></a>
-                              <ul class="nav nav-second-level">
-                                  <li>
-                                      <a href="index.php?controller=Leiding&action=overview">Overzicht</a>
-                                  </li>
-                                  <li>
-                                      <a href="index.php?controller=Leiding&action=create">Aanmaken</a>
-
-                                  </li>
-                                  <li>
-                                      <a href="index.php?controller=Leiding&action=update">wijzigen</a>
-                                  </li>
-                                  <li>
-                                      <a href="index.php?controller=Leiding&action=delete">archiveren</a>
-                                  </li>
-                              </ul>
-                            </li>
-                            <li>
                                 <a href="#"><i class="fa fa-child" aria-hidden="true"></i> Kids<span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level">
                                   <li>
@@ -163,10 +128,9 @@
                                     </li>
                                 </ul>
                               </li>
-
+                      <?php endif; ?>
                     </ul>
-                    <?php endif; ?>
-                    <?php endif; ?>
+
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>

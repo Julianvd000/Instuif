@@ -38,14 +38,11 @@
 </head>
 
 <body>
-    <div class="bg"></div>
-        <h1>Dagen tot eerste <i></i>Instuif!</h1>
-        <h3 id="Timer"></h3>
+    <h1>Welkom bij de aanmelding voor Instuif passetour</h1>
         <div id="buttons">
-          <button type="submit" class="btn btn-primary button">Inloggen</button>
-        <a href="./index.php?controller=kids&action=create"><button  type="submit" class="btn btn-primary button">Kind Inschrijven</button></a>  
+          <a href="./index.php?controller=kids&action=create"><button  type="submit" class="btn btn-primary button" >Kind Inschrijven</button></a>
         </div>
-        <?php include 'form.php'; ?>
+
     </body>
 </html>
 <script src="assets/js/main.js"></script>

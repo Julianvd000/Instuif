@@ -13,50 +13,34 @@
  */
 class KidsController {
   protected $model;
+  protected $resultKid = false;
+  protected $resultPhoto;
 
     public function __construct() {
       $this->model = new KidsModel();
+      
 
 }
-   public function overview(){
+  public function create(){
+    $GLOBALS['config']['project-name'] = 'Kind inschrijven';
+    if (isset($_POST["submit"])) {
 
-
-        loadView("theme/header");
-
-        loadView("theme/footer");
-
+      $this->resultKid = $this->model->createKid($_POST);
+      $this->resultPhoto = $this->model->createKidPhoto($_FILES);
     }
-    public function AanwezigOrAfwezig(){
-
-        loadView("theme/header");
-
-        loadView("theme/footer");
-
-
-    }
-    public function create(){
-        loadView("theme/header");
+      loadView("theme/header");
+      if ($this->resultKid === true && $this->resultPhoto) {
+        loadView("kids/kidsCreated");
+      } else {
         loadView("kids/kids");
-        loadView("theme/footer");
+      }
 
-        var_dump($_FILES);
+      loadView("theme/footer");
 
-        $resultKid = $this->model->createKid($_POST);
-        $resultPhoto = $this->model->createKidPhoto($_FILES);
 
-          if ($resultKid === true && $resultPhoto){
-            loadView("kids/kidsCreated");
-          }
 
-        }
-        public function update(){
-        loadView("theme/header");
 
-        loadView("theme/footer");
-        }
-        public function delete(){
-        loadView("theme/header");
 
-        loadView("theme/footer");
-        }
+
+      }
 }

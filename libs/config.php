@@ -2,7 +2,7 @@
 
   $config;
 
-  $config['project-name'] = 'Instuif Databank';
+  $config['project-name'] = 'Instuif';
   $config['project-author'] = 'Instuif';
   $config['project-company'] = 'Instuif';
 
@@ -13,7 +13,7 @@
   $config['db-port'] = 3306;
   $config['db-user'] = 'root';
   $config['db-password'] = '';
-  $config['db-name'] = 'instuif';
+  $config['db-name'] = 'instuifdb';
   // DB config
   $config['database'] = new DbHandler();
 

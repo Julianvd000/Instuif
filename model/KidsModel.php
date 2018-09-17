@@ -17,7 +17,9 @@ class KidsModel
 
      public function createKidPhoto($fileArray)
      {
-        $target_dir = __DIR__ . "/KidsPhotos/";
+        var_dump($fileArray);
+        die();
+        $target_dir = "/KidsPhotos/";
         $target_file = $target_dir . basename($fileArray["fileToUpload"]["name"]);
         $this->afbeeldingName = basename($fileArray["fileToUpload"]["name"]);
         $uploadOk = 1;
@@ -49,7 +51,7 @@ class KidsModel
         // if everything is ok, try to upload file
         } else {
             if (move_uploaded_file($fileArray["fileToUpload"]["tmp_name"], $target_file)) {
-                return true;
+                return ["name" => $this->afbeeldingName, "condition" => true, "fileLocation" => $target_file ];
             } else {
                 return false;
             }
@@ -59,9 +61,7 @@ class KidsModel
      public function createKid($postArray)
      {
        return true;
-
-
-       $sql = "INSERT INTO `kids`(`voornaam`, `tussenvoegesel`, `achternaam`, `geboortedatum`, `straat`, `huisnummer`, `toevoeging`, `postcode`, `plaats`, `telefoon_ouder`, `email_ouder`, `afbeelding_naam`)
+       $sql = "INSERT INTO `KID`(`voornaam`, `tussenvoegesel`, `achternaam`, `geboortedatum`, `straat`, `huisnummer`, `toevoeging`, `postcode`, `plaats`, `telefoon_ouder`, `email_ouder`, `afbeelding_naam`)
        VALUES (':voornaam', ':tussenvoegesel', ':achternaam', ':geboortedatum', ':straat', ':huisnummer', ':toevoeging', ':postcode', ':plaats', ':telefoon_ouder', ':email_ouder', ':afbeelding_naam')";
        $sqlValues = [
           ':voornaam' =>$postArray["firstName"],
@@ -74,7 +74,7 @@ class KidsModel
           ':postcode'=>$postArray["zipCode"],
           ':plaats'=>$postArray["City"],
           ':telefoon_ouder'=>$postArray["cellPhone"],
-          ':email_ouder'=> $postArray["Email"],
+          ':email_ouder'=> $postArray["EmailP"],
           ':afbeelding_naam' => $this->afbeeldingName
        ];
        $resultData = $this->db->createdata($sql, $sqlValues);

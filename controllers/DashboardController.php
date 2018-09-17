@@ -3,7 +3,6 @@
  * Pages Controller
  */
 
-require_once APP_PATH . '/model/DashboardModel.php';
 class DashboardController
 {
 
@@ -24,14 +23,5 @@ class DashboardController
       loadView('theme/footer');
   }
 
-  public function login(){
-    $Postvaribles = $_POST;
-    var_dump($this->DashModel);
-    $loginResult = $this->DashModel->timeToLoginIn($Postvaribles);
-    if ($loginResult === true) {
-        header("Location: ./index.php?controller=teams&action=overview");
-    }
-
-  }
 
 }
