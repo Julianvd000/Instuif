@@ -34,10 +34,9 @@ class DbHandler {
     }
   }
 
-    public function createdata($query, $queryValues) {
+    public function createdata($query) {
         try{
             $query = $this->conn->prepare($query);
-            $query->bindParam($queryValues);
             $query->execute();
             $last_id = $this->conn->lastInsertId();
             return $last_id;

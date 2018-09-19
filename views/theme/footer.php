@@ -7,7 +7,7 @@
             <!-- /.container-fluid -->
         </div>
         <!-- /#page-wrapper -->
-
+  <img class="footerImage" src=".\assets\images\Instuif_01.jpg" alt="">      
     </div>
     <!-- /#wrapper -->
 
@@ -24,5 +24,5 @@
     <script src="assets/js/sb-admin-2.js"></script>
 
 </body>
- 
+
 </html>

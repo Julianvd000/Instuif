@@ -48,9 +48,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-            <?php echo " <a class='navbar-brand' href='./'> <i class='fas fa-home'></i> ".$GLOBALS['config']['project-name']. "</a>"; ?>
+
+
+            <img class="imageLogo" src="./assets/images/logo.jpg" alt="">
+            <br>
 
             </div>
+            <?php echo " <a class='navbar-brand' href='./'> <i class='fas fa-home'></i> ".$GLOBALS['config']['project-name']. "</a>"; ?>
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">

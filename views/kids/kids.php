@@ -54,8 +54,10 @@
     <div class="col-3">
       <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
       <label class="form-check-label" for="exampleCheck1">Vinkje om akkoord te gaan met de voorwaarden</label><br>
+      <p>
       <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
       <label class="form-check-label" for="exampleCheck1">Foto is geupload.</label>
+      </p>
     </div>
     <div class="col-12">
       <input class="btn btn-primary button"type="submit" name="submit" value="Opslaan">

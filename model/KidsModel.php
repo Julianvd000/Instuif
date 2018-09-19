@@ -17,8 +17,6 @@ class KidsModel
 
      public function createKidPhoto($fileArray)
      {
-        var_dump($fileArray);
-        die();
         $target_dir = "/KidsPhotos/";
         $target_file = $target_dir . basename($fileArray["fileToUpload"]["name"]);
         $this->afbeeldingName = basename($fileArray["fileToUpload"]["name"]);
@@ -62,21 +60,20 @@ class KidsModel
      {
        return true;
        $sql = "INSERT INTO `KID`(`voornaam`, `tussenvoegesel`, `achternaam`, `geboortedatum`, `straat`, `huisnummer`, `toevoeging`, `postcode`, `plaats`, `telefoon_ouder`, `email_ouder`, `afbeelding_naam`)
-       VALUES (':voornaam', ':tussenvoegesel', ':achternaam', ':geboortedatum', ':straat', ':huisnummer', ':toevoeging', ':postcode', ':plaats', ':telefoon_ouder', ':email_ouder', ':afbeelding_naam')";
-       $sqlValues = [
-          ':voornaam' =>$postArray["firstName"],
-          ':tussenvoegesel'=>$postArray["middleName"],
-          ':achternaam'=>$postArray["lastName"],
-          ':geboortedatum'=>$postArray["bday"],
-          ':straat'=>$postArray["street"],
-          ':huisnummer'=>$postArray["houseNumber"],
-          ':toevoeging'=>$postArray["Added"],
-          ':postcode'=>$postArray["zipCode"],
-          ':plaats'=>$postArray["City"],
-          ':telefoon_ouder'=>$postArray["cellPhone"],
-          ':email_ouder'=> $postArray["EmailP"],
-          ':afbeelding_naam' => $this->afbeeldingName
-       ];
-       $resultData = $this->db->createdata($sql, $sqlValues);
+       VALUES (
+          $postArray["firstName"],
+          $postArray["middleName"],
+          $postArray["lastName"],
+          $postArray["bday"],
+          $postArray["street"],
+          $postArray["houseNumber"],
+          $postArray["Added"],
+          $postArray["zipCode"],
+          $postArray["City"],
+          $postArray["cellPhone"],
+          $postArray["EmailP"],
+          $this->afbeeldingName
+        );
+       $resultData = $this->db->createdata($sql);
      }
 }
